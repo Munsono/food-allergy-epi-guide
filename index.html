@@ -38,5 +38,57 @@
     <h2>How to Identify a Reaction</h2>
     <p>Allergic reactions can look different every time. Common signs include: <strong>sneezing, runny or stuffy nose, itchy/watery eyes, and itchy skin or rashes.</strong> Symptoms vary by exposure type—ranging from respiratory issues with pollen to digestive issues or severe airway swelling (anaphylaxis) with food/drugs. <strong>Act fast and use epi!</strong></p>
     
-    <div
-    
+    <div style="text-align: center;">
+        <p>Learn how to take more action with Red Sneakers for Oakley:</p>
+        <a href="https://www.redsneakers.org/take-action" target="_blank" class="action-btn">Red Sneakers: Take Action</a>
+    </div>
+</div>
+
+<div class="section interactive-box">
+    <h2>Symptom Checker</h2>
+    <p>Select what you are experiencing to see the recommended action:</p>
+    <div id="button-container">
+        <button class="symptom-btn" onclick="toggleSymptom(this, 'mild')">Itchy Mouth</button>
+        <button class="symptom-btn" onclick="toggleSymptom(this, 'severe')">Trouble Breathing</button>
+        <button class="symptom-btn" onclick="toggleSymptom(this, 'mild')">A Few Hives</button>
+        <button class="symptom-btn" onclick="toggleSymptom(this, 'severe')">Swelling Throat</button>
+        <button class="symptom-btn" onclick="toggleSymptom(this, 'severe')">Feeling Faint</button>
+    </div>
+    <div id="status-msg"></div>
+</div>
+
+<div class="section">
+    <h2>How to Use Your EpiPen</h2>
+    <img src="https://images.unsplash.com/photo-1559839734-2b71f1e3c77c?auto=format&fit=crop&q=80&w=1000" alt="Medical professional with healthcare tools" class="epi-img">
+    <div class="epi-steps">
+        <p><strong>1. Blue to the Sky:</strong> Pull off the blue safety release.</p>
+        <p><strong>2. Orange to the Thigh:</strong> Swing and push the orange tip firmly into the outer thigh.</p>
+        <p><strong>3. Hold:</strong> Keep it pressed there for 3 seconds.</p>
+        <p><strong>4. 911:</strong> Call emergency services immediately after injecting.</p>
+    </div>
+</div>
+
+<script>
+    let severeCount = 0;
+    function toggleSymptom(btn, type) {
+        btn.classList.toggle('active');
+        const msg = document.getElementById('status-msg');
+        if (btn.classList.contains('active') && type === 'severe') {
+            severeCount++;
+        } else if (!btn.classList.contains('active') && type === 'severe') {
+            severeCount--;
+        }
+        if (severeCount > 0) {
+            msg.innerHTML = "⚠️ SEVERE SYMPTOMS: Use EpiPen and call 911 immediately!";
+            msg.style.color = "#c62828";
+        } else if (document.querySelectorAll('.symptom-btn.active').length > 0) {
+            msg.innerHTML = "Monitor closely. If symptoms worsen, use your EpiPen.";
+            msg.style.color = "#f57c00";
+        } else {
+            msg.innerHTML = "";
+        }
+    }
+</script>
+
+</body>
+</html>
