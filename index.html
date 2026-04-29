@@ -9,14 +9,19 @@
         header { background: #c62828; color: white; padding: 30px; text-align: center; border-radius: 15px; margin-bottom: 20px; }
         .section { background: white; padding: 25px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         h2 { color: #c62828; border-bottom: 2px solid #ffcdd2; padding-bottom: 8px; }
-        .interactive-box { background: #ffebee; border: 2px solid #ef9a9a; padding: 20px; border-radius: 12px; text-align: center; }
-        .symptom-btn { margin: 5px; padding: 10px 15px; border: 1px solid #c62828; background: white; border-radius: 20px; cursor: pointer; transition: 0.3s; }
-        .symptom-btn.active { background: #c62828; color: white; }
-        #status-msg { margin-top: 20px; font-weight: bold; font-size: 1.2rem; min-height: 1.5em; }
-        .blog-btn { display: inline-block; background: #c62828; color: white; padding: 15px 25px; text-decoration: none; border-radius: 30px; font-weight: bold; margin-top: 10px; }
-        .action-btn { display: inline-block; background: #004a99; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 10px; }
-        .epi-img { width: 100%; max-width: 400px; border-radius: 10px; margin: 20px 0; display: block; margin-left: auto; margin-right: auto; }
-        .epi-steps { background: #f1f8e9; border-left: 5px solid #4caf50; padding: 15px; border-radius: 5px; }
+        .award-banner { background: #fff9c4; border: 2px dashed #fbc02d; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px; font-weight: bold; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000; margin-top: 15px; }
+        .video-container iframe, .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .slideshow-container { background: #f1f8e9; padding: 30px; border-radius: 12px; text-align: center; position: relative; border: 2px solid #4caf50; }
+        .slide { display: none; }
+        .active-slide { display: block; animation: fade 0.5s; }
+        @keyframes fade { from {opacity: .4} to {opacity: 1} }
+        .symptom-btn, .nav-btn { margin: 5px; padding: 10px 20px; border: 1px solid #c62828; background: white; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .nav-btn { border-color: #4caf50; color: #2e7d32; }
+        .active { background: #c62828; color: white; }
+        .blog-btn { display: inline-block; background: #c62828; color: white; padding: 15px 25px; text-decoration: none; border-radius: 30px; font-weight: bold; }
+        .action-btn { display: inline-block; background: #004a99; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; }
+        #status-msg { margin-top: 20px; font-weight: bold; color: #c62828; }
     </style>
 </head>
 <body>
@@ -27,68 +32,12 @@
 </header>
 
 <div class="section">
-    <h2>My Blog: @livlovesfoodect</h2>
-    <p>I share my favorite allergy-friendly recipes, restaurant finds, and tips for living with food restrictions. Check out my latest posts over on Instagram!</p>
-    <div style="text-align: center;">
-        <a href="https://www.instagram.com/livlovesfoodect/" target="_blank" class="blog-btn">Follow My Food Journey</a>
-    </div>
-</div>
-
-<div class="section">
-    <h2>How to Identify a Reaction</h2>
-    <p>Allergic reactions can look different every time. Common signs include: <strong>sneezing, runny or stuffy nose, itchy/watery eyes, and itchy skin or rashes.</strong> Symptoms vary by exposure type—ranging from respiratory issues with pollen to digestive issues or severe airway swelling (anaphylaxis) with food/drugs. <strong>Act fast and use epi!</strong></p>
+    <div class="award-banner">🏆 Winner: TriHealth Pitch Competition</div>
+    <h2>Campus Leadership & Impact</h2>
+    <p>I recently proposed a campuswide initiative to expand access to emergency epinephrine. This plan addresses the critical gap in accessible, undesignated epinephrine for our community.</p>
     
-    <div style="text-align: center;">
-        <p>Learn how to take more action with Red Sneakers for Oakley:</p>
-        <a href="https://www.redsneakers.org/take-action" target="_blank" class="action-btn">Red Sneakers: Take Action</a>
-    </div>
-</div>
+    <div class="video-container">
+        <video controls>
+            <source src="Epinephrine Access at Xavier
 
-<div class="section interactive-box">
-    <h2>Symptom Checker</h2>
-    <p>Select what you are experiencing to see the recommended action:</p>
-    <div id="button-container">
-        <button class="symptom-btn" onclick="toggleSymptom(this, 'mild')">Itchy Mouth</button>
-        <button class="symptom-btn" onclick="toggleSymptom(this, 'severe')">Trouble Breathing</button>
-        <button class="symptom-btn" onclick="toggleSymptom(this, 'mild')">A Few Hives</button>
-        <button class="symptom-btn" onclick="toggleSymptom(this, 'severe')">Swelling Throat</button>
-        <button class="symptom-btn" onclick="toggleSymptom(this, 'severe')">Feeling Faint</button>
-    </div>
-    <div id="status-msg"></div>
-</div>
-
-<div class="section">
-    <h2>How to Use Your EpiPen</h2>
-    <img src="https://images.unsplash.com/photo-1559839734-2b71f1e3c77c?auto=format&fit=crop&q=80&w=1000" alt="Medical professional with healthcare tools" class="epi-img">
-    <div class="epi-steps">
-        <p><strong>1. Blue to the Sky:</strong> Pull off the blue safety release.</p>
-        <p><strong>2. Orange to the Thigh:</strong> Swing and push the orange tip firmly into the outer thigh.</p>
-        <p><strong>3. Hold:</strong> Keep it pressed there for 3 seconds.</p>
-        <p><strong>4. 911:</strong> Call emergency services immediately after injecting.</p>
-    </div>
-</div>
-
-<script>
-    let severeCount = 0;
-    function toggleSymptom(btn, type) {
-        btn.classList.toggle('active');
-        const msg = document.getElementById('status-msg');
-        if (btn.classList.contains('active') && type === 'severe') {
-            severeCount++;
-        } else if (!btn.classList.contains('active') && type === 'severe') {
-            severeCount--;
-        }
-        if (severeCount > 0) {
-            msg.innerHTML = "⚠️ SEVERE SYMPTOMS: Use EpiPen and call 911 immediately!";
-            msg.style.color = "#c62828";
-        } else if (document.querySelectorAll('.symptom-btn.active').length > 0) {
-            msg.innerHTML = "Monitor closely. If symptoms worsen, use your EpiPen.";
-            msg.style.color = "#f57c00";
-        } else {
-            msg.innerHTML = "";
-        }
-    }
-</script>
-
-</body>
-</html>
+            
