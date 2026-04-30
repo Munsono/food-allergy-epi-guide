@@ -69,26 +69,3 @@
     <h2>Winning Proposal: Epinephrine Access</h2>
     <p>I proposed a campuswide initiative to expand access to emergency epinephrine. This project addresses critical healthcare gaps by ensuring life-saving medication is available when seconds count.</p>
     
-    <div class="video-container">
-        <video controls>
-            <source src="presentation.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <p style="text-align: center; margin-top: 15px;">
-        <small>Watch my presentation: "Saving Lives through Preparedness."</small>
-    </p>
-</div>
-
-</body>
-</html>
-
-
-cd /workspaces/food-allergy-epi-guide
-ffmpeg -i presentation.mp4 \
-  -c:v libx264 -profile:v high -level 4.0 -crf 23 -preset medium \
-  -c:a aac -b:a 160k \
-  -movflags +faststart \
-  presentation-web.mp4
-
-  
