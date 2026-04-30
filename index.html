@@ -90,4 +90,8 @@ ffmpeg -i presentation.mp4 \
   presentation-web.mp4
   <source src="presentation-web.mp4" type="video/mp4">
 
-  
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install ffmpeg
+ffmpeg -version
+ffmpeg -i "presentation.mp4" -c:v libx264 -c:a aac output.mp4
+
