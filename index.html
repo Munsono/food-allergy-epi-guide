@@ -21,8 +21,6 @@
 
         /* Contest Section */
         .award-badge { background: #fff9c4; border: 2px dashed #fbc02d; padding: 15px; border-radius: 10px; text-align: center; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; background: #000; }
-        .video-container video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
         .btn { display: inline-block; background: #c62828; color: white; padding: 15px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: 0.3s; margin-top: 15px; }
         .btn:hover { background: #a50000; transform: translateY(-2px); }
@@ -66,32 +64,12 @@
 
 <div class="section">
     <div class="award-badge">🏆 Winner: TriHealth Pitch Competition</div>
-    <h2>Winning Proposal: Epinephrine Access</h2>
-    <p>I proposed a campuswide initiative to expand access to emergency epinephrine. This project addresses critical healthcare gaps by ensuring life-saving medication is available when seconds count.</p>
-    
-    <div class="video-container">
-        <video controls>
-            <source src="presentation.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <p style="text-align: center; margin-top: 15px;">
-        <small>Watch my presentation: "Saving Lives through Preparedness."</small>
-    </p>
+    <h2>Winning Proposal: Campuswide Epinephrine Access</h2>
+    <p>This initiative, "Saving Lives through Preparedness," outlines a plan to expand access to emergency epinephrine at Xavier University. By partnering with Red Sneakers for Oakley, the project ensures life-saving medication is available in key campus locations when seconds count.</p>
+    <p>The proposal addresses critical healthcare gaps and fosters a safer, more inclusive environment for all students with life-threatening allergies.</p>
 </div>
 
 </body>
 </html>
 
-ffmpeg -i presentation.mp4 \
-  -c:v libx264 -profile:v high -level 4.0 -crf 23 -preset medium \
-  -c:a aac -b:a 160k \
-  -movflags +faststart \
-  presentation-web.mp4
-  <source src="presentation-web.mp4" type="video/mp4">
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install ffmpeg
-ffmpeg -version
-ffmpeg -i "presentation.mp4" -c:v libx264 -c:a aac output.mp4
 
