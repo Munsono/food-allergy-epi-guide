@@ -83,3 +83,11 @@
 </body>
 </html>
 
+
+cd /workspaces/food-allergy-epi-guide
+ffmpeg -i presentation.mp4 \
+  -c:v libx264 -profile:v high -level 4.0 -crf 23 -preset medium \
+  -c:a aac -b:a 160k \
+  -movflags +faststart \
+  presentation-web.mp4
+  
